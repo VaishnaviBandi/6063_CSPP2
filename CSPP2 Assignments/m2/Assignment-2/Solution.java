@@ -1,11 +1,9 @@
-/**
- * {Java program to find the roots of a quadratic equation}
- */
+/* java program to find the roots of a quadratic equation.*/ 
 import java.util.Scanner;
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
@@ -23,24 +21,26 @@ public class Solution {
         int a = scan.nextInt();
         int b = scan.nextInt();
         int c = scan.nextInt();
-        rootsOfQuadraticEquation(a, b, c);
+        rootsOf(a, b, c);
     }
-    /**
-     * { function to find the roots }
+    /**.
+     * { function to find the roots }.
      *
      * @param      a     { parameter_description }
      * @param      b     { parameter_description }
      * @param      c     { parameter_description }
      */
-    public static void rootsOfQuadraticEquation(final int a, final int b, final int c){
-        double x;
-        double y;
+    public static void rootsOf(final int a, final int b, final int c) {
+        double m;
+        double n;
         final int four = 4;
-        x = (-b + Math.sqrt((b * b) - four * a * c)) / (2 * a);
-        y = (-b - Math.sqrt((b * b) - four * a * c)) / (2 * a);
-        System.out.println(x + " " + y);
+        m = (-b + Math.sqrt((b * b) - four * a * c)) / (2 * a);
+        n = (-b - Math.sqrt((b * b) - four * a * c)) / (2 * a);
+        System.out.println(m + " " + n);
     }
     /*
     Need to write the rootsOfQuadraticEquation function and print the output.
     */
 }
+
+
