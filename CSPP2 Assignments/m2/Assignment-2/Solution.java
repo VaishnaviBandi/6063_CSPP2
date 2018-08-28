@@ -1,4 +1,4 @@
-/* java program to find the roots of a quadratic equation.*/ 
+/* java program to find the roots of a quadratic equation.*/
 import java.util.Scanner;
 /**
  * Class for solution.
@@ -12,9 +12,9 @@ public final class Solution {
     Do not modify this main function.
     */
     /**
-     * { function_description - main function }
+     * { function_description - main function. }
      *
-     * @param      args  The arguments
+     * @param      args  The arguments.
      */
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -24,7 +24,7 @@ public final class Solution {
         rootsOf(a, b, c);
     }
     /**.
-     * { function to find the roots }.
+     * { function to find the roots. }.
      *
      * @param      a     { parameter_description }
      * @param      b     { parameter_description }
