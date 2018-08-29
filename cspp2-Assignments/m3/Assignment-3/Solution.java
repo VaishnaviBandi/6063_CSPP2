@@ -21,8 +21,7 @@ public class Solution {
         {
             if(n1 % i==0 && n2 % i==0)
                 gcd = i;
-        System.out.println(gcd);
         }
-        
+        System.out.println(gcd);
     }
 }
