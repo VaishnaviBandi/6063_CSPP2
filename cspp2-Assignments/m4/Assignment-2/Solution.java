@@ -1,6 +1,21 @@
-import java.util.*;
+/**.
+ * { item_description }
+ */
+import java.util.Scanner;
+/**.
+ * Class for solution.
+ */
 public class Solution {
+	/**.
+	 * Constructs the object.
+	 */
+	private Solution() { }
 	/* Fill the main function to print resultant of addition of matrices*/
+	/**.
+	 * { function_description }
+	 *
+	 * @param      args  The arguments
+	 */
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int rowa = sc.nextInt();
@@ -24,16 +39,16 @@ public class Solution {
 		} else {
 			int[][]c = new int[rowa][cola];
 			for (int i = 0; i < rowb; i++) {
-				for (int j = 0; j < colb; j++ ) {
+				for (int j = 0; j < colb; j++) {
 					c[i][j] = a[i][j] + b[i][j];
 				}
+			}
+			for (int i = 0; i < rowb; i++) {
+				for (int j = 0; j < colb; j++) {
+					System.out.print(c[i][j] + " ");
 				}
-				for (int i = 0; i < rowb; i++) {
-					for (int j = 0; j < colb; j++ ) {
-						System.out.print(c[i][j]);
-					}
-					System.out.println();
-				}
+				System.out.println();
 			}
 		}
 	}
+}
