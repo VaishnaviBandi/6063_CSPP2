@@ -45,7 +45,7 @@ public class Solution {
 			}
 			for (int i = 0; i < rowb; i++) {
 				for (int j = 0; j < colb; j++) {
-						System.out.print(c[i][j]);
+						System.out.println(c[i][j]);
 						if(j==0 || j==1){
 							System.out.print("");
 						}
