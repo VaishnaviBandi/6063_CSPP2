@@ -3,32 +3,37 @@ public class Solution {
 	/* Fill the main function to print resultant of addition of matrices*/
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int row = sc.nextInt();
-		int col = sc.nextInt();
-		int[][] a = new int[row][col];
-		for (int i = 0; i < row; i++) {
-			for (int j = 0; j < col; j++) {
+		int rowa = sc.nextInt();
+		int cola = sc.nextInt();
+		int[][] a = new int[rowa][cola];
+		for (int i = 0; i < rowa; i++) {
+			for (int j = 0; j < cola; j++) {
 				a[i][j] = sc.nextInt();
 			}
 		}
-		int[][] b = new int[row][col];
-		for (int i = 0; i < row; i++) {
-			for (int j = 0; j < col; j++) {
+		int rowb = sc.nextInt();
+		int colb = sc.nextInt();
+		int[][] b = new int[rowb][colb];
+		for (int i = 0; i < rowb; i++) {
+			for (int j = 0; j < colb; j++) {
 				b[i][j] = sc.nextInt();
 			}
 		}
-		if(a[row][col]!=b[row][col]){
+		if (rowa != rowb && cola != colb) {
 			System.out.println("not possible");
-		}
-		else{
-			int[][]c = new int[row][col];
-		for (int i = 0; i < row; i++) {
-			for (int j = 0; j < col; j++ ) {
-				c[i][j] = a[i][j] + b[i][j];
-				System.out.println(c[i][j]);
+		} else {
+			int[][]c = new int[rowa][cola];
+			for (int i = 0; i < rowb; i++) {
+				for (int j = 0; j < colb; j++ ) {
+					c[i][j] = a[i][j] + b[i][j];
+				}
+				}
+				for (int i = 0; i < rowb; i++) {
+					for (int j = 0; j < colb; j++ ) {
+						System.out.print(c[i][j]);
+					}
+					System.out.println();
+				}
 			}
-			System.out.println();
 		}
 	}
-	}
-}
