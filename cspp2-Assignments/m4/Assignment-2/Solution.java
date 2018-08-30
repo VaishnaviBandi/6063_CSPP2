@@ -18,12 +18,12 @@ public class Solution {
 			}
 		}
 		int[][]c = new int[row][col];
-		for(int i = 0; i<row; i++){
-			for (int j=0; j<col; j++ ) {
-				c[i][j]= a[i][j] + b[i][j];
+		for (int i = 0; i < row; i++) {
+			for (int j = 0; j < col; j++ ) {
+				c[i][j] = a[i][j] + b[i][j];
 				System.out.println(c[i][j]);
-				System.out.println();
 			}
+			System.out.println();
 		}
-			}
+	}
 }
