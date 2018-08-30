@@ -13,7 +13,7 @@ public class Solution {
 			arr[i] = sc.nextInt();
 		}
 		int max = arr[0];
-		for (int i = 0; i < n - 1 ; i++ ) {
+		for (int i = 0; i < n ; i++ ) {
 			if (max < arr[i]) {
 				max = arr[i];
 			}
