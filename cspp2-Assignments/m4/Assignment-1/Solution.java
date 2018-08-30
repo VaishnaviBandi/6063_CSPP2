@@ -1,11 +1,11 @@
 /**.
  * { item_description }
  */
-import java.util.*;
+import java.util.Scanner;
 /**.
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
 	/**.
 	 * { item_description }
 	 */
@@ -26,7 +26,7 @@ public class Solution {
 			arr[i] = sc.nextInt();
 		}
 		int max = arr[0];
-		for (int i = 0; i < n ; i++ ) {
+		for (int i = 0; i < n; i++ ) {
 			if (max < arr[i]) {
 				max = arr[i];
 			}
