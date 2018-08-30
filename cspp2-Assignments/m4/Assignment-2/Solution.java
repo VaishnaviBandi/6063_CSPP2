@@ -45,14 +45,14 @@ public class Solution {
 			}
 			for (int i = 0; i < rowb; i++) {
 				for (int j = 0; j < colb; j++) {
-					if(j == colb-1)
+					if(j == colb-1 && i == rowb-1)
 					{
 						System.out.println(c[i][j]);
 					}else {
 						System.out.print(c[i][j] + " ");
 					}
 				}
-				System.out.println();
+				// System.out.println();
 			}
 		}
 	}
