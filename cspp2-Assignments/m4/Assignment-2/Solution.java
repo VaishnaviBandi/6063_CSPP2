@@ -17,7 +17,11 @@ public class Solution {
 				b[i][j] = sc.nextInt();
 			}
 		}
-		int[][]c = new int[row][col];
+		if(a[row][col]!=b[row][col]){
+			System.out.println("not possible");
+		}
+		else{
+			int[][]c = new int[row][col];
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++ ) {
 				c[i][j] = a[i][j] + b[i][j];
@@ -25,5 +29,6 @@ public class Solution {
 			}
 			System.out.println();
 		}
+	}
 	}
 }
