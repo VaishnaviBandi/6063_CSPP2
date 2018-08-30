@@ -18,6 +18,7 @@ public class Solution {
 				max = arr[i];
 			}
 		}
+		System.out.println(max);
 	}
 }
 
