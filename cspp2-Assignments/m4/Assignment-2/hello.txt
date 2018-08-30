@@ -1,0 +1,54 @@
+########## Testcase 0: Failed ##########
+Expected Output: 
+2 2 3
+4 6 6
+7 8 10
+
+Your Output: 
+2 2 3 
+4 6 6 
+7 8 10
+
+----------------------------------------
+########## Testcase 1: Failed ##########
+Expected Output: 
+2 2 1
+4 6 1
+7 8 2
+
+Your Output: 
+2 2 1 
+4 6 1 
+7 8 2
+
+----------------------------------------
+########## Testcase 2: Passed ##########
+Expected Output: 
+not possible
+
+Your Output: 
+not possible
+
+----------------------------------------
+########## Testcase 3: Passed ##########
+Expected Output: 
+not possible
+
+Your Output: 
+not possible
+
+----------------------------------------
+Result: 2/4 testcases passed.
+Starting audit...
+[ERROR] H:\CSPP2\6063_CSPP2\cspp2-Assignments\m4\Assignment-2\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] H:\CSPP2\6063_CSPP2\cspp2-Assignments\m4\Assignment-2\Solution.java:8: Class Solution should be declared as final. [FinalClass]
+[ERROR] H:\CSPP2\6063_CSPP2\cspp2-Assignments\m4\Assignment-2\Solution.java:9:1: File contains tab characters (this is the first instance). [FileTabCharacter]
+[ERROR] H:\CSPP2\6063_CSPP2\cspp2-Assignments\m4\Assignment-2\Solution.java:19:33: Parameter args should be final. [FinalParameters]
+Audit done.
+Checkstyle ends with 4 errors.
+
+
+[master 55f98dd] "check_style_score -> 2 of 4 passed. style score: 0/1 "
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 cspp2-Assignments/m4/Assignment-2/hello.txt
+
