@@ -23,7 +23,7 @@ public final class Solution {
         }
         return str;
     }
-    /**
+    /**.
      * { function_description }
      *
      * @param      args  The arguments
