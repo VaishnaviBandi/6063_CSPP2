@@ -20,7 +20,7 @@ public final class Solution {
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             int number = Character.getNumericValue(c);
-            sum = sum + number * Math.pow(2, (s.length() - 1) - i); 
+            sum = sum + number * Math.pow(2, (s.length() - 1) - i);
         }
         int temp = (int) sum;
         String res = Integer.toString(temp);
