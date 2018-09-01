@@ -34,7 +34,13 @@ final class Solution {
                 if (resultant < x) {
                     newval = a[i][j] - resultant;
                     a[i][j] = newval;
-                }}
+                }
+                else
+                {
+                    newval = a[i][j] - resultant + y;
+            a[i][j] = newval;
+                }
+            }
             }
             return a;
         }
