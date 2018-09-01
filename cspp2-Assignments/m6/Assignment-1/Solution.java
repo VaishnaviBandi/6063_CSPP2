@@ -18,7 +18,7 @@ public final class Solution {
      * @param      n     n value
      */
     static void oddComposites(final int n) {
-    	// for (int i = 0; i <= n; i++) {
+        // for (int i = 0; i <= n; i++) {
         //  // for (int j = 2; j <= i / 2; j++) {
         //      if (n % i == 0) {
         //          if (i % 3 == 0) {
@@ -26,7 +26,7 @@ public final class Solution {
         //          }// end if
         //          else{
         //              break;
-        for (int i = 2; i <= n; i++){
+        for (int i = 2; i <= n; i++) {
             int flag = 0;
             for (int j = i; j >= 1; j--) {
                 if (i % j == 0) {
