@@ -23,8 +23,11 @@ public final class Solution {
 			for (int j = 2; j <= i / 2; j++) {
 				if (i % j == 0) {
 					if (i % 3 == 0) {
-						System.out.println(j);
+						System.out.println(i);
 					}// end if
+					else{
+						break;
+					}
 				}
 			}
 		}
