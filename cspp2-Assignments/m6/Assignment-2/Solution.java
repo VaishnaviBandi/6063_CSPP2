@@ -37,7 +37,7 @@ final class Solution {
                 }
                 else
                 {
-                    newval = a[i][j] - resultant + y;
+                    newval = a[i][j] - resultant + x;
             a[i][j] = newval;
                 }
             }
