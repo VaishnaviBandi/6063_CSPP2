@@ -33,13 +33,20 @@ public final class Solution {
 		// }
 
 		for (int i = 3; i <= n; i++) {
-			if (n % i == 0) {
-				if (i % 2 != 0) {
-					System.out.println(i);
+			int c=0;
+			for (int j= i; j>=1; j--){
+				if(i%j==0){
+					c++;
+				}
+			}
+				if (c % 2 != 0) {
+					if(i%2!=0){
+						System.out.println(i);
+					}
+					
 				}
 			}
 		}
-	}
 	/**
 	* main method as driver program.
 	* @param args is the parameter for this method
@@ -49,5 +56,5 @@ public final class Solution {
 		int n = scan.nextInt();
 		oddComposites(n);
 	}
-}
 
+}
