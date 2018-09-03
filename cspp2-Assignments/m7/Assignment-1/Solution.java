@@ -7,7 +7,7 @@ class InputValidator {
      * { var_description }
      */
     private String name;
-    /**
+    /**.
      * { var_description }
      */
     private int length;
@@ -28,20 +28,21 @@ class InputValidator {
      */
     public boolean validateData() {
         int six = 6;
-        if (length < 6) {
+        if (length < six) {
             return false;
-        } else {
-            return true;
         }
+        return true;
     }
 }
 /**.
  * Class for solution.
  */
-public class Solution {
-    /**
+class Solution {
+    /**.
      * { item_description: main method }
+     * @param args main method
      */
+
     public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
         String string = s.next();
