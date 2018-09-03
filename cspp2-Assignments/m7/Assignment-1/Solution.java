@@ -1,21 +1,27 @@
 import java.util.Scanner;
-/**
+/**.
  * Class for input validator.
  */
 class InputValidator {
+    /**.
+     * { var_description }
+     */
     private String name;
+    /**
+     * { var_description }
+     */
     private int length;
     /*Write the atrributes and methods for InputValidator*/
-    /**
+    /**.
      * Constructs the object.
      *
      * @param      string  The string
      */
-    public InputValidator(String string) {
+    InputValidator(final String string) {
         name = string;
         length = name.length();
     }
-    /**
+    /**.
      * { function_description }
      *
      * @return     { description_of_the_return_value }
@@ -29,14 +35,14 @@ class InputValidator {
         }
     }
 }
-/**
+/**.
  * Class for solution.
  */
 public class Solution {
     /**
      * { item_description: main method }
      */
-    public static void main(String args[]) {
+    public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
         String string = s.next();
         InputValidator i = new InputValidator(string);
