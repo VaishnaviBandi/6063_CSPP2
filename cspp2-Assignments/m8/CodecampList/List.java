@@ -64,11 +64,11 @@ public class List {
      * { var_description }
      */
     private final int ten = 10;
-    /**
+    /**.
      * { var_description }
      */
     private int[] arr = new int[ten];
-    /**
+    /**.
      * { var_description }
      */
     private int size;
