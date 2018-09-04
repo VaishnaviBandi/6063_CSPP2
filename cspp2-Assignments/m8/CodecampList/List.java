@@ -214,14 +214,13 @@ public class List {
 	 * of the specified element in this list,
 	 * or -1 if this list does not contain the element.
 	 */
-	public int indexOf(int item) {
+	public void indexOf(int item) {
 		// Replace the code below
 		for (int i = 0; i <= size - 1; i++) {
 			if (arr[i] == item) {
-				return i;
+				System.out.println(i);
 			}
 		}
-		return -1;
 	}
 
 	public static void main(String[] args) {
@@ -257,7 +256,7 @@ public class List {
 				l.remove(Integer.parseInt(tokens[1]));
 				break;
 			case "indexOf":
-				System.out.println(l.indexOf(Integer.parseInt(tokens[1])));
+				l.indexOf(Integer.parseInt(tokens[1]));
 				break;
 			case "get":
 				System.out.println(l.get(Integer.parseInt(tokens[1])));
