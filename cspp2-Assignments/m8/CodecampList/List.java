@@ -150,11 +150,10 @@ public class List {
 	 * How do we check if the position is greater than the
 	 * number of items in the list? Would size variable be useful?
 	 */
-	public int get(int index) {
+	public void get(int index) {
 		// Replace the code below to write the code for get
 		if (index >= 0 && index < size)
-			return arr[index];
-		return -1;
+			System.out.println(arr[index]);
 	}
 
 
@@ -214,13 +213,14 @@ public class List {
 	 * of the specified element in this list,
 	 * or -1 if this list does not contain the element.
 	 */
-	public void indexOf(int item) {
+	public int indexOf(int item) {
 		// Replace the code below
 		for (int i = 0; i <= size - 1; i++) {
 			if (arr[i] == item) {
-				System.out.println(i);
+				return i;
 			}
 		}
+		return -1;
 	}
 
 	public static void main(String[] args) {
@@ -256,10 +256,10 @@ public class List {
 				l.remove(Integer.parseInt(tokens[1]));
 				break;
 			case "indexOf":
-				l.indexOf(Integer.parseInt(tokens[1]));
+				System.out.println(l.indexOf(Integer.parseInt(tokens[1])));
 				break;
 			case "get":
-				System.out.println(l.get(Integer.parseInt(tokens[1])));
+				l.get(Integer.parseInt(tokens[1]));
 				break;
 			case "contains":
 				System.out.println(l.contains(Integer.parseInt(tokens[1])));
