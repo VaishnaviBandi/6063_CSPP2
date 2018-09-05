@@ -30,8 +30,11 @@ public class Fibonacci
     public static List fib(int n) {
         // todo - complete this method
         List fibonacci = new List();
-        fibonacci.add(0);
-        fibonacci.add(1);
+        int f1 = 0;
+        int f2 = 1;
+        int sum; 
+        fibonacci.add(f1);
+        fibonacci.add(f2);
         // if(n == 1 || n == 2) {
         //     obj.add(1)
         //     // return 1;
@@ -40,9 +43,12 @@ public class Fibonacci
         // fib1 = fib(n-1) + fib(n -2);
         // obj.add(fib1); 
         for (int i = 1; i<=n-2; i++) {
-            int index = fibonacci.size();
-            int next = fibonacci.get(index-1) + fibonacci.get(index-2);
-            fibonacci.add(next);
+            // int index = fibonacci.size();
+            // int next = fibonacci.get(index-1) + fibonacci.get(index-2);
+            int fib = f1 + f2;
+            f1 = f2;
+            f2 = fib;
+            fibonacci.add(fib);
         }
         return fibonacci;
     }
