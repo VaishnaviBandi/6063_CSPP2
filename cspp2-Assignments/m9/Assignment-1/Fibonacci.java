@@ -16,8 +16,13 @@ import java.util.Scanner;
  * by invoking the add method provided in the List ADT.
  *
  */
-
-public class Fibonacci {
+/**.
+ * { item_description }
+ */
+public final class Fibonacci {
+    /**.
+     * Constructs the object.
+     */
     private Fibonacci() {
 
     }
@@ -28,7 +33,7 @@ public class Fibonacci {
      *
      * Look for the hint.txt if some of the testcases fail.
      */
-    /**
+    /**.
      * {generates fibonacci series and returns it in a list }
      *
      * @param      n     { parameter_description }
@@ -48,7 +53,7 @@ public class Fibonacci {
         //     // return 1;
         // }
         // fib1 = fib(n-1) + fib(n -2);
-        // obj.add(fib1); 
+        // obj.add(fib1);
         for (int i = 1; i <= n - 2; i++) {
             // int index = fibonacci.size();
             // int next = fibonacci.get(index-1) + fibonacci.get(index-2);
@@ -59,7 +64,7 @@ public class Fibonacci {
         }
         return fibonacci;
     }
-    /**
+    /**.
      * { function_description: main function}
      *
      * @param      args  The arguments
