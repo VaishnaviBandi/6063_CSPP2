@@ -24,7 +24,7 @@ class Student {
      *
      * @return     The name.
      */
-    public String getName(){ //Getter method which returns
+    public String getName() { //Getter method which returns
         //the value of instance variable
         return this.name;
     }
@@ -42,7 +42,7 @@ class Student {
             return false;
         }
 
-        Student that =(Student) other;
+        Student that = (Student) other;
         return this.getName().equals(that.getName());
     }
 
@@ -62,7 +62,7 @@ class Student {
 /**.
  * Class for solution.
  */
-public final class Solution{
+public final class Solution {
     /**.
      * Constructs the object.
      */
@@ -74,7 +74,7 @@ public final class Solution{
      *
      * @param      args  The arguments
      */
-    public static void main(final String[] args) {
+ public static void main(final String[] args) {
         Scanner stdin = new Scanner(new BufferedInputStream(
                                         System.in));
         String objectType = stdin.nextLine();
