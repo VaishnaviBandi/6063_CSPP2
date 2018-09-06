@@ -28,7 +28,8 @@ public class List {
         // What should be the default values?
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
-        list = new int[10];
+        final int ten = 10;
+        list = new int[ten];
 
         // Think about the initial value for size.
         // How many items do we have in the list when you create it?
@@ -110,8 +111,9 @@ public class List {
      *
      *
      */
-    /**
+    /**.
      * { item_description }
+     * @return list 
      */
     private int[] resize() {
         list = Arrays.copyOf(list, 2 * list.length);
@@ -224,7 +226,7 @@ public class List {
      * @return     String representation of the object.
      */
     public String toString() {
-        if (size == 0){
+        if (size == 0) {
             return "[]";
         }
         String str = "[";
@@ -277,7 +279,7 @@ public class List {
      array to the end of list*/
     /**.
      * { item_description }
-     * @param items
+     * @param items the item
      */
     public void addAll(final int[] items) {
         // write the logic
