@@ -113,7 +113,7 @@ public class List {
      */
     /**.
      * { item_description }
-     * @return list 
+     * @return list
      */
     private int[] resize() {
         list = Arrays.copyOf(list, 2 * list.length);
@@ -406,3 +406,4 @@ public class List {
         }
     }
 }
+
