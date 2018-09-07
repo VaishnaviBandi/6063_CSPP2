@@ -219,7 +219,7 @@ public class List {
 		for (int i = 0; i < newArray.length; i++) {
 			// int temp = newArray[i];
 			int index = indexOf(newArray[i]);
-			for (int j = 0; j < list.length; j++) {
+			for (int j = 0; j < list.length-1; j++) {
 				while (index != -1) {
 					remove(list[j]);
 					j--;
