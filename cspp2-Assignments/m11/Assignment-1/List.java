@@ -235,7 +235,15 @@ public class List {
 	"Index Out of Bounds Exception" if any of values start and end are negative
 	and also if start is greater than end.
 	*/
-	public List subList(int start, int end) {
+	/**.
+	 * { function_description }
+	 *
+	 * @param      start  The start
+	 * @param      end    The end
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
+	public List subList (final int start, final int end) {
 		// write the logic for subList
 		if (start < 0 || end < 0 || start > end) {
 			System.out.println("Index Out of Bounds Exception");
@@ -266,7 +274,7 @@ public class List {
 	 *
 	 * @return     { description_of_the_return_value }
 	 */
-	public boolean equals(List newlist) {
+	public boolean equals(final List newlist) {
 		// Replace the code below
 		// int count = 0;
 		// if (newlist.length != list.length) {
@@ -371,25 +379,26 @@ public class List {
 					l.removeAll(a);
 				}
 				break;
-			case "subList": {
-				if (tokens.length != 2) break;
+			case "subList": 
+				if (tokens.length != 2) {
+					break; }
 				String[] arrstring3 = tokens[1].split(",");
-				List object = l.subList(Integer.parseInt(arrstring3[0]),
-				                        Integer.parseInt(arrstring3[1]));
+	List object = l.subList(Integer.parseInt(arrstring3[0]),
+				  Integer.parseInt(arrstring3[1]));
 				if (object != null) {
 					System.out.println(object);
 				}
 				break;
-			}
 			case "equals":
 				if (tokens.length == 2) {
+					break;}
 					String[] lt = tokens[1].split(",");
 					List l2 = new List();
 					for (int k = 0; k < lt.length; k++) {
 						l2.add(Integer.parseInt(lt[k]));
 					}
 					System.out.println(l.equals(l2));
-				}
+				
 				break;
 			case "clear":
 				l.clear();
