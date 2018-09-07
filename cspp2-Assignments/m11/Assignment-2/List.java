@@ -231,17 +231,18 @@ public class List<E> {
      */
     public boolean equals(List<E> listdata) {
         //return toString().equals(listdata.toString());
-        if(size != listdata.size()) {
-            return false;
-        }
-        else {
-            for (int i = 0; i <listdata.size(); i++) {
-                if(list[i] != listdata.get(i)) {
-                    return false;
-                }
-            }
-        }
-        return true;
+        // if(size != listdata.size()) {
+        //     return false;
+        // }
+        // else {
+        //     for (int i = 0; i <listdata.size(); i++) {
+        //         if(list[i] != listdata.get(i)) {
+        //             return false;
+        //         }
+        //     }
+        // }
+        // return true;
+        return toString().equals(listdata.toString());
     }
     /*Removes all the elements from list*/
     public void clear() {
