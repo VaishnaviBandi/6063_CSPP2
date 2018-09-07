@@ -169,15 +169,17 @@ public class List {
 	 */
 	public String toString() {
 		// Replace the code below
-		if (size == 0)
+		if (size == 0) {
 			return "[]";
-		String str = "[";
-		int i = 0;
-		for (i = 0; i < size - 1; i++) {
-			str = str + list[i] + ",";
+		} else {
+			String str = "[";
+			int i = 0;
+			for (i = 0; i < size - 1; i++) {
+				str = str + list[i] + ",";
+			}
+			str = str + list[i] + "]";
+			return str;
 		}
-		str = str + list[i] + "]";
-		return str;
 	}
 	/*
 	 * Contains return true if the list has the item passed as an argument to
@@ -219,10 +221,10 @@ public class List {
 		for (int i = 0; i < newArray.length; i++) {
 			// int temp = newArray[i];
 			int index = indexOf(newArray[i]);
-				while (index != -1) {
-					remove(index);
-					index = indexOf(newArray[i]);
-				
+			while (index != -1) {
+				remove(index);
+				index = indexOf(newArray[i]);
+
 			}
 		}
 	}
@@ -273,7 +275,7 @@ public class List {
 		// 		}
 		// 	}
 		// }
-		return this.list.toString().equals(list.toString());
+		return toString().equals(newlist.toString());
 	}
 	/*
 	* Removes all the elements from list
