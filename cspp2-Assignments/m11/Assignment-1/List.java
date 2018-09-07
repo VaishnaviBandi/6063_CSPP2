@@ -5,7 +5,6 @@ import java.util.Arrays;
  * List of .
  */
 public final class List {
-    
     //Implement all the methods mentioned to build a ListADT
 
     /*
@@ -73,7 +72,8 @@ public final class List {
      * Constructs the object.
      */
     public List() {
-        list = new int[10];
+        int ten = 10;
+        list = new int[ten];
         size = 0;
 
         // what are the two variables to be initialized here? think about the
@@ -445,13 +445,16 @@ public final class List {
                 if (tokens.length == 2) {
                     String[] t2 = tokens[1].split(",");
                     int[] a = new int[t2.length];
-                    for (int i = 0; i < t2.length; i++)
+                    for (int i = 0; i < t2.length; i++) {
                         a[i] = Integer.parseInt(t2[i]);
+                    }
                     l.removeAll(a);
                 }
                 break;
-            case "subList": {
-                if (tokens.length != 2) break;
+            case "subList":
+                if (tokens.length != 2) {
+                    break;
+                }
                 String[] arrstring3 = tokens[1].split(",");
                 List object = l.subList(Integer.parseInt(arrstring3[0]),
                                         Integer.parseInt(arrstring3[1]));
@@ -459,7 +462,6 @@ public final class List {
                     System.out.println(object);
                 }
                 break;
-            }
             case "equals":
                 if (tokens.length == 2) {
                     String[] lt = tokens[1].split(",");
