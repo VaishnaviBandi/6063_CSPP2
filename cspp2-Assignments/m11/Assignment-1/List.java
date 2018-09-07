@@ -259,6 +259,13 @@ public class List {
 	Returns a boolean indicating whether the parameter i.e a List object is
 	exactly matching with the given list or not.
 	*/
+	/**.
+	 * { function_description }
+	 *
+	 * @param      newlist  The newlist
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	public boolean equals(List newlist) {
 		// Replace the code below
 		// int count = 0;
@@ -282,12 +289,19 @@ public class List {
 	* Think about this case and make the method
 	* the simpler.
 	*/
+	/**.
+	 * { function_description }
+	 */
 	public void clear() {
 		// write the logic for clear.
 		size = 0;
 	}
-
-	public static void main(String[] args) {
+/**.
+ * { function_description }
+ *
+ * @param      args  The arguments
+ */
+	public static void main(final String[] args) {
 		// create an object of the list to invoke methods on it
 		List l = new List();
 
@@ -299,13 +313,12 @@ public class List {
 			String line = stdin.nextLine();
 			// split the line using space
 			String[] tokens = line.split(" ");
-			// based on the list operation invoke the corresponding method
 			switch (tokens[0]) {
 			case "add":
 				if (tokens.length == 2) {
 					String[] t = tokens[1].split(",");
 					if (t.length == 1) {
-						l.add(Integer.parseInt(tokens[1]));
+		l.add(Integer.parseInt(tokens[1]));
 					}
 				}
 				break;
@@ -323,19 +336,19 @@ public class List {
 			case "indexOf":
 				if (tokens.length == 2) {
 					System.out.println(l.indexOf(
-					                       Integer.parseInt(tokens[1])));
+					      Integer.parseInt(tokens[1])));
 				}
 				break;
 			case "get":
 				if (tokens.length == 2) {
 					System.out.println(l.get(
-					                       Integer.parseInt(tokens[1])));
+					       Integer.parseInt(tokens[1])));
 				}
 				break;
 			case "contains":
 				if (tokens.length == 2) {
 					System.out.println(l.contains(
-					                       Integer.parseInt(tokens[1])));
+					       Integer.parseInt(tokens[1])));
 				}
 				break;
 			case "addAll":
@@ -343,7 +356,8 @@ public class List {
 					String[] t1 = tokens[1].split(",");
 					int[] temp = new int[t1.length];
 					for (int i = 0; i < temp.length; i++) {
-						temp[i] = Integer.parseInt(t1[i]);
+						temp[i] = Integer.parseInt(
+							t1[i]);
 					}
 					l.addAll(temp);
 				}
@@ -362,15 +376,16 @@ public class List {
 				String[] arrstring3 = tokens[1].split(",");
 				List object = l.subList(Integer.parseInt(arrstring3[0]),
 				                        Integer.parseInt(arrstring3[1]));
-				if (object != null)
+				if (object != null) {
 					System.out.println(object);
+				}
 				break;
 			}
 			case "equals":
 				if (tokens.length == 2) {
 					String[] lt = tokens[1].split(",");
 					List l2 = new List();
-					for (int k = 0; k < lt.length; k++ ) {
+					for (int k = 0; k < lt.length; k++) {
 						l2.add(Integer.parseInt(lt[k]));
 					}
 					System.out.println(l.equals(l2));
