@@ -72,7 +72,7 @@ public final class List {
      * Constructs the object.
      */
     public List() {
-        int ten = 10;
+        final int ten = 10;
         list = new int[ten];
         size = 0;
 
@@ -481,3 +481,4 @@ public final class List {
         }
     }
 }
+
