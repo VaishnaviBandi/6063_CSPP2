@@ -391,14 +391,14 @@ public class List {
 				break;
 			case "equals":
 				if (tokens.length == 2) {
-					break;}
+					break;
+				}
 					String[] lt = tokens[1].split(",");
 					List l2 = new List();
 					for (int k = 0; k < lt.length; k++) {
 						l2.add(Integer.parseInt(lt[k]));
 					}
 					System.out.println(l.equals(l2));
-				
 				break;
 			case "clear":
 				l.clear();
