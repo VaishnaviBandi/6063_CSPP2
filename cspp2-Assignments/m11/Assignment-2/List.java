@@ -230,7 +230,18 @@ public class List<E> {
       i.e a List object is exactly matching with the given list or not.
      */
     public boolean equals(List<E> listdata) {
-        return toString().equals(listdata.toString());
+        //return toString().equals(listdata.toString());
+        if(size != listdata.size()) {
+            return false;
+        }
+        else {
+            for (int i = 0; i <listdata.size(); i++) {
+                if(list[i] != listdata.get(i)) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
     /*Removes all the elements from list*/
     public void clear() {
