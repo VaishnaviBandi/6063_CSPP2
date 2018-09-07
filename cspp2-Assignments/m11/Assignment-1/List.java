@@ -273,7 +273,7 @@ public class List {
 		// 		}
 		// 	}
 		// }
-		return toString().equals(list.toString());
+		return this.list.toString().equals(list.toString());
 	}
 	/*
 	* Removes all the elements from list
