@@ -168,7 +168,7 @@ public class List<E> {
      */
     public boolean contains(E item) {
         //Write logic for contains method
-        return indexOf(item) == -1;
+        return indexOf(item) != -1;
     }
     /*
      * Returns the index of the first occurrence
@@ -235,7 +235,7 @@ public class List<E> {
         //     return false;
         // }
         // else {
-        //     for (int i = 0; i <listdata.size(); i++) {
+        //     for (int i = 0; i < listdata.size(); i++) {
         //         if(list[i] != listdata.get(i)) {
         //             return false;
         //         }
