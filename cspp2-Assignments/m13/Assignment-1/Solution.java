@@ -1,7 +1,9 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
-
+/**.
+ * Class for set.
+ */
 class Set {
     //your code goes here...
     //Good luck :-)
@@ -21,28 +23,50 @@ class Set {
         list = new int[ten];
         size = 0;
    }
-    
+    /**.
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int size() {
         return size;
     }
-
+/**.
+ * { function_description }
+ */
     public void resize() {
         list = Arrays.copyOf(list, list.length * 2);
     }
-
-    public boolean contains(int item) {
+/**.
+ * { function_description }
+ *
+ * @param      item  The item
+ *
+ * @return     { description_of_the_return_value }
+ */
+    public boolean contains(final int item) {
         return indexOf(item) != -1;
     }
-
-    public int indexOf(int item) {
+/**.
+ * Searches for the first match.
+ *
+ * @param      item  The item
+ *
+ * @return     { description_of_the_return_value }
+ */
+    public int indexOf(final int item) {
         for(int i = 0; i < size; i++) {
             if(item == list[i])
                 return i;
         }
         return -1;
     }
-
-    public void add(int item) {
+/**
+ * { function_description }
+ *
+ * @param      item  The item
+ */
+    public void add(final int item) {
         if (size == list.length) {
             resize();
         }
@@ -50,12 +74,21 @@ class Set {
         	list[size++] = item;
     }
 }
+/**.
+ * { function_description }
+ *
+ * @param      item  The item
+ */
     public void add(final int[] item) {
         for (int i = 0; i < item.length; i++) {
             add(item[i]);
         }
     }
-
+/**.
+ * Returns a string representation of the object.
+ *
+ * @return     String representation of the object.
+ */
     public String toString() {
 
         if (size == 0) {
@@ -69,13 +102,25 @@ class Set {
         str = str + list[i] + "}";
         return str;
     }
-
+/**.
+ * { function_description }
+ *
+ * @param      index  The index
+ *
+ * @return     { description_of_the_return_value }
+ */
     public int get(final int index) {
         return list[index];
         
     }
-
-    public Set intersection(Set set1)
+/**.
+ * { function_description }
+ *
+ * @param      set1  The set 1
+ *
+ * @return     { description_of_the_return_value }
+ */
+    public Set intersection(final Set set1)
     {
         Set intersect = new Set();
         for (int element : list) {
@@ -88,8 +133,14 @@ class Set {
         }
         return intersect;
     }
-
-    public Set  retainAll(int[] item) {
+/**.
+ * { function_description }
+ *
+ * @param      item  The item
+ *
+ * @return     { description_of_the_return_value }
+ */
+    public Set  retainAll(final int[] item) {
         Set retain = new Set();
         for (int element : list) {
             for (int i = 0; i < item.length; i++) {
@@ -101,6 +152,13 @@ class Set {
         }
         return retain;
     }
+    /**.
+     * { function_description }
+     *
+     * @param      list  The list
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int[][] cartesianProduct(final Set list) {
         int [][] result = new int[this.size() * list.size()][2];
         int k = -1;
