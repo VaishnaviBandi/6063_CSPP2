@@ -46,9 +46,10 @@ class Set {
         if (size == list.length) {
             resize();
         }
-        list[size++] = item;
+        if (!contains(item)) {
+        	list[size++] = item;
     }
-
+}
     public void add(final int[] item) {
         for (int i = 0; i < item.length; i++) {
             add(item[i]);
