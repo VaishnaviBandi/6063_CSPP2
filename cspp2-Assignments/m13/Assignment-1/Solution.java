@@ -56,8 +56,9 @@ class Set {
  */
     public int indexOf(final int item) {
         for(int i = 0; i < size; i++) {
-            if(item == list[i])
+            if (item == list[i]){
                 return i;
+            }
         }
         return -1;
     }
@@ -120,8 +121,7 @@ class Set {
  *
  * @return     { description_of_the_return_value }
  */
-    public Set intersection(final Set set1)
-    {
+    public Set intersection(final Set set1) {
         Set intersect = new Set();
         for (int element : list) {
             for (int i = 0; i < set1.size(); i++) {
@@ -159,8 +159,8 @@ class Set {
      *
      * @return     { description_of_the_return_value }
      */
-    public int[][] cartesianProduct(final Set list) {
-        int [][] result = new int[this.size() * list.size()][2];
+    public int[][] cartesianProduct(Set list) {
+        int[][] result = new int[this.size() * list.size()][2];
         int k = -1;
         if (this.size() == 0 || list.size() == 0) {
             return null;
