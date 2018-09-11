@@ -5,11 +5,11 @@ import java.util.Arrays;
  * List of .
  */
 class List {
-    /**
+    /**.
      * { var_description }
      */
     private int[] list;
-    /**
+    /**.
      * { var_description }
      */
     private int size;
@@ -17,7 +17,7 @@ class List {
      * Constructs the object.
      */
     List() {
-        int ten = 10;
+        final int ten = 10;
         list = new int[ten];
         size = 0;
     }
@@ -227,7 +227,7 @@ class List {
 /**.
  * Class for solution.
  */
-class Solution {
+public class Solution {
     /**.
      * { function_description }
      *
