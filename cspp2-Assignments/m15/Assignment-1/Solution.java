@@ -1,7 +1,7 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
-/**
+/**.
  * List of .
  */
 class List{
@@ -54,7 +54,7 @@ class List{
             throw new Exception("Invalid Position Exception");
     }
 }
-    /**
+    /**.
      * Returns a string representation of the object.
      *
      * @return     String representation of the object.
@@ -87,7 +87,7 @@ class List{
         }
         return -1;
     }
-    /**
+    /**.
      * { function_description }
      *
      * @param      item  The item
@@ -103,7 +103,7 @@ class List{
         }
         return false;
     }
-    /**
+    /**.
      * Adds all.
      *
      * @param      arra  The arra
@@ -112,7 +112,7 @@ class List{
         for (int i = 0; i < arra.length; i++)
             add(arra[i]);
     }
-    /**
+    /**.
      * { function_description }
      *
      * @param      index    The index
@@ -125,7 +125,7 @@ class List{
         }
         list[index] = element;
     }
-    /**
+    /**.
      * { function_description }
      *
      * @param      item  The item
@@ -141,7 +141,7 @@ class List{
         }
         return count;
     }
-    /**
+    /**.
      * Removes all.
      *
      * @param      newArray   The new array
@@ -157,7 +157,7 @@ class List{
             }
         }
     }
-    /**
+    /**.
      * { function_description }
      *
      * @param      list1  The list 1
@@ -170,14 +170,14 @@ class List{
         }
         return this.toString().equals(list1.toString());
     }
-    /**
+    /**.
      * { function_description }
      */
     public void clear() {
         size = 0;
 
     }
-    /**
+    /**.
      * { function_description }
      *
      * @param      start      The start
@@ -200,7 +200,7 @@ class List{
             return list1;
         }
     }
-    /**
+    /**.
      * { function_description }
      *
      * @param      index  The index
@@ -215,7 +215,7 @@ class List{
         }
     }
 }
-/**
+/**.
  * Class for solution.
  */
 class Solution {
@@ -250,7 +250,7 @@ class Solution {
                 if (tokens.length == 2) {
                     l.remove(Integer.parseInt(tokens[1]));
                 }
-            } catch(Exception e) {
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
             break;
@@ -289,10 +289,9 @@ class Solution {
                     for (int i = 0; i < t2.length; i++) {
                         a[i] = Integer.parseInt(t2[i]);
                     }
-                    try{
+                    try {
                         l.removeAll(a);
-                    }
-                    catch(Exception e) {
+                    } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
                 }
@@ -309,7 +308,7 @@ class Solution {
                     if (object != null) {
                         System.out.println(object);
                     }
-                    } catch(Exception e) {
+                    } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
                     break;
