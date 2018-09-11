@@ -219,11 +219,7 @@ class List {
      * Example: [1,2,3,0,0,0,0,0,0,0] toString should only return the items in
      * the list and not all the elements of the array.
      */
-    /**
-     * Returns a string representation of the object.
-     *
-     * @return     String representation of the object.
-     */
+
     public String toString() {
         // Replace the code below
         if (size == 0) {
@@ -274,10 +270,6 @@ class List {
     /*
     Inserts all the elements of specified int array to the end of list
     */
-    /**
-     * Method addAll.
-     * @param newArray : series of numbers.
-     */
     public void addAll(final int[] newArray) {
         for (int i = 0; i < newArray.length; i++) {
             if (list.length == size) {
@@ -286,9 +278,7 @@ class List {
             add(newArray[i]);
         }
     }
-    /**
-     * resizes the list.
-     */
+
     public  void resize() {
         int[] newList = new int[list.length * 2];
         for (int i = 0; i < size; i++) {
@@ -301,13 +291,7 @@ class List {
      Removes all of its elements that are contained in the specified int
      array.
     */
-    /**
-     * Removes all.
-     *
-     * @param      newArray                  The new array
-     *
-     * @throws     InvalidPositionException  Invalid Position.
-     */
+
     public void removeAll(final int[] newArray)
     throws InvalidPositionException {
         //int[] temp = Arrays.copyOf(list, list.length);
@@ -329,18 +313,21 @@ class List {
     "Index Out of Bounds Exception" if any of values start and end are negative
     and also if start is greater than end.
     */
-    
+    public List subList(final int start,
+                        final int end) throws IndexOutOfBoundsException {
+        if (start < 0 || end < 0 || start > end || size == 0) {
+            throw new IndexOutOfBoundsException();
+        }
+        List newList = new List(end - start);
+        for (int i = start; i < end; i++) {
+            newList.add(list[i]);
+        } return newList;
+    }
     /*
     Returns a boolean indicating whether the parameter i.e a List object is
     exactly matching with the given list or not.
     */
-    /**
-     * Checks if the given lists are equal.
-     *
-     * @param      array  The list
-     *
-     * @return     True/False.
-     */
+    
     public boolean equals(final List array) {
         if (this.size != array.size) {
             return false;
