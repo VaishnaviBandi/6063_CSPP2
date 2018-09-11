@@ -23,7 +23,7 @@ class List {
      * @param      item  The item
      */
     public void add (int item) {
-        if (size==list.length) {
+        if (size == list.length) {
             resize();
         }
         list[size++] = item;
@@ -44,7 +44,6 @@ class List {
      * @throws     Exception  { exception_description }
      */
      public void remove(final int index) throws Exception {
-        
         if (index >= 0 && index <= size) {
             for (int i = index; i <= size; i++) {
                 list[i] = list[i + 1];
@@ -65,10 +64,10 @@ class List {
         } else {
             String str = "[";
             int i = 0;
-        for (i =0;i < size-1;i++) {
+        for (i = 0; i < size - 1; i++) {
             str += list[i] + ",";
         }
-        str += list[i]+"]";
+        str += list[i] + "]";
         return str;
     }
     }
@@ -120,8 +119,8 @@ class List {
      */
     public void add(final int index, final int element) {
         size++;
-        for(int i = size - 1; i > index; i--) {
-            list[i] = list[i-1];
+        for (int i = size - 1; i > index; i--) {
+            list[i] = list[i - 1];
         }
         list[index] = element;
     }
@@ -132,7 +131,7 @@ class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public int count (int item) {
+    public int count(int item) {
         int count = 0;
         for (int i = 0; i < size; i++) {
             if (item == list[i]) {
@@ -217,7 +216,7 @@ class List {
 /**.
  * Class for solution.
  */
-public class Solution {
+class Solution {
     /**.
      * { function_description }
      *
