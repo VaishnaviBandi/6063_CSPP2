@@ -79,7 +79,7 @@ class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public int indexOf (final int item) {
+    public int indexOf(final int item) {
         for (int i = 0; i < size; i++) {
             if (item == list[i]) {
                 return i;
@@ -94,7 +94,7 @@ class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean contains (final int item) {
+    public boolean contains(final int item) {
         // Replace the code below
         for (int i = 0; i < size; i++) {
             if (item == list[i]) {
@@ -108,7 +108,7 @@ class List {
      *
      * @param      arra  The arra
      */
-    public void addAll (int[] arra) {
+    public void addAll(final int[] arra) {
         for (int i = 0; i < arra.length; i++)
             add(arra[i]);
     }
@@ -118,7 +118,7 @@ class List {
      * @param      index    The index
      * @param      element  The element
      */
-    public void add(int index, int element) {
+    public void add(final int index, final int element) {
         size++;
         for(int i = size - 1; i > index; i--) {
             list[i] = list[i-1];
