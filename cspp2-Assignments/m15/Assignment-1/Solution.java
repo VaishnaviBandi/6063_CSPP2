@@ -227,7 +227,8 @@ class List {
 /**.
  * Class for solution.
  */
-public class Solution {
+class Solution {
+    private Solution() { }
     /**.
      * { function_description }
      *
