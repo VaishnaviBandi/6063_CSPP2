@@ -5,10 +5,20 @@ import java.util.Arrays;
  * List of .
  */
 class List {
+    /**
+     * { var_description }
+     */
     private int[] list;
+    /**
+     * { var_description }
+     */
     private int size;
-    public List() {
-        list = new int[10];
+    /**
+     * Constructs the object.
+     */
+    List() {
+        int ten = 10;
+        list = new int[ten];
         size = 0;
     }
     /**.
@@ -22,7 +32,7 @@ class List {
      *
      * @param      item  The item
      */
-    public void add (int item) {
+    public void add(final int item) {
         if (size == list.length) {
             resize();
         }
@@ -43,7 +53,7 @@ class List {
      *
      * @throws     Exception  { exception_description }
      */
-     public void remove(final int index) throws Exception {
+    public void remove(final int index) throws Exception {
         if (index >= 0 && index <= size) {
             for (int i = index; i <= size; i++) {
                 list[i] = list[i + 1];
@@ -51,8 +61,8 @@ class List {
             size--;
         } else {
             throw new Exception("Invalid Position Exception");
+        }
     }
-}
     /**.
      * Returns a string representation of the object.
      *
@@ -64,12 +74,12 @@ class List {
         } else {
             String str = "[";
             int i = 0;
-        for (i = 0; i < size - 1; i++) {
-            str += list[i] + ",";
+            for (i = 0; i < size - 1; i++) {
+                str += list[i] + ",";
+            }
+            str += list[i] + "]";
+            return str;
         }
-        str += list[i] + "]";
-        return str;
-    }
     }
     /**.
      * Searches for the first match.
@@ -108,8 +118,9 @@ class List {
      * @param      arra  The arra
      */
     public void addAll(final int[] arra) {
-        for (int i = 0; i < arra.length; i++)
+        for (int i = 0; i < arra.length; i++) {
             add(arra[i]);
+        }
     }
     /**.
      * { function_description }
@@ -131,7 +142,7 @@ class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public int count(int item) {
+    public int count(final int item) {
         int count = 0;
         for (int i = 0; i < size; i++) {
             if (item == list[i]) {
@@ -151,7 +162,7 @@ class List {
         for (int each : newArray) {
             for (int i = 0; i < newArray.length; i++) {
                 if (contains(newArray[i])) {
-                        remove(indexOf(newArray[i]));
+                    remove(indexOf(newArray[i]));
                 }
             }
         }
@@ -188,7 +199,7 @@ class List {
      */
     public List subList(final int start, final int end) throws Exception {
         if (start < 0 || end < 0 || start >= end
-         || start > size || end > size) {
+                || start > size || end > size) {
             throw new Exception("Index Out of Bounds Exception");
         } else {
             List list1 = new List();
@@ -234,10 +245,10 @@ class Solution {
                 if (tokens.length == 2) {
                     String[] t = tokens[1].split(",");
                     if (t.length == 1) {
-                l.add(Integer.parseInt(tokens[1]));
+                        l.add(Integer.parseInt(tokens[1]));
                     }
                     if (t.length == 2) {
-                    l.add(Integer.parseInt(t[0]), Integer.parseInt(t[1]));
+                        l.add(Integer.parseInt(t[0]), Integer.parseInt(t[1]));
                     }
                 }
                 break;
@@ -248,30 +259,30 @@ class Solution {
                 System.out.println(l);
                 break;
             case "remove":
-            try {
-                if (tokens.length == 2) {
-                    l.remove(Integer.parseInt(tokens[1]));
+                try {
+                    if (tokens.length == 2) {
+                        l.remove(Integer.parseInt(tokens[1]));
+                    }
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
                 }
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
-            break;
+                break;
             case "indexOf":
                 if (tokens.length == 2) {
                     System.out.println(l.indexOf(
-                        Integer.parseInt(tokens[1])));
+                                           Integer.parseInt(tokens[1])));
                 }
                 break;
             case "get":
                 if (tokens.length == 2) {
                     System.out.println(l.get(
-                        Integer.parseInt(tokens[1])));
+                                           Integer.parseInt(tokens[1])));
                 }
                 break;
             case "contains":
                 if (tokens.length == 2) {
                     System.out.println(l.contains(
-                              Integer.parseInt(tokens[1])));
+                                           Integer.parseInt(tokens[1])));
                 }
                 break;
             case "addAll":
@@ -279,7 +290,7 @@ class Solution {
                     String[] t1 = tokens[1].split(",");
                     int[] temp = new int[t1.length];
                     for (int i = 0; i < temp.length; i++) {
-                    temp[i] = Integer.parseInt(t1[i]);
+                        temp[i] = Integer.parseInt(t1[i]);
                     }
                     l.addAll(temp);
                 }
@@ -305,34 +316,34 @@ class Solution {
                     }
                     String[] arrstring3 = tokens[1].split(",");
                     List object = l.subList(
-                        Integer.parseInt(arrstring3[0]),
-                            Integer.parseInt(arrstring3[1]));
+                                      Integer.parseInt(arrstring3[0]),
+                                      Integer.parseInt(arrstring3[1]));
                     if (object != null) {
                         System.out.println(object);
                     }
-                    } catch (Exception e) {
-                        System.out.println(e.getMessage());
-                    }
-                    break;
-             case "equals":
-            if (tokens.length == 2) {
-                String[] lt = tokens[1].split(",");
-                List l2 = new List();
-                for (int k = 0; k < lt.length; k++) {
-                    l2.add(Integer.parseInt(lt[k]));
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
                 }
-                System.out.println(l.equals(l2));
-            }
+                break;
+            case "equals":
+                if (tokens.length == 2) {
+                    String[] lt = tokens[1].split(",");
+                    List l2 = new List();
+                    for (int k = 0; k < lt.length; k++) {
+                        l2.add(Integer.parseInt(lt[k]));
+                    }
+                    System.out.println(l.equals(l2));
+                }
                 break;
             case "clear":
-            l.clear();
-            break;
+                l.clear();
+                break;
             case "count":
-            if (tokens.length == 2) {
-                System.out.println(l.count(
-                    Integer.parseInt(tokens[1])));
-            }
-            break;
+                if (tokens.length == 2) {
+                    System.out.println(l.count(
+                                           Integer.parseInt(tokens[1])));
+                }
+                break;
             default:
                 break;
             }
