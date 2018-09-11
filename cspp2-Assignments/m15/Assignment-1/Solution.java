@@ -4,7 +4,7 @@ import java.util.Arrays;
 /**.
  * List of .
  */
-class List{
+class List {
     private int[] list;
     private int size;
     public List() {
@@ -79,7 +79,7 @@ class List{
      *
      * @return     { description_of_the_return_value }
      */
-    public int indexOf(final int item) {
+    public int indexOf (final int item) {
         for (int i = 0; i < size; i++) {
             if (item == list[i]) {
                 return i;
@@ -94,7 +94,7 @@ class List{
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean contains(final int item) {
+    public boolean contains (final int item) {
         // Replace the code below
         for (int i = 0; i < size; i++) {
             if (item == list[i]) {
@@ -108,7 +108,7 @@ class List{
      *
      * @param      arra  The arra
      */
-    public void addAll(int[] arra){
+    public void addAll (int[] arra) {
         for (int i = 0; i < arra.length; i++)
             add(arra[i]);
     }
@@ -132,10 +132,10 @@ class List{
      *
      * @return     { description_of_the_return_value }
      */
-    public int count(int item){
+    public int count (int item) {
         int count = 0;
-        for(int i = 0; i < size; i++){
-            if(item == list[i]){
+        for (int i = 0; i < size; i++) {
+            if (item == list[i]) {
                 count++;
             }
         }
@@ -188,7 +188,6 @@ class List{
      * @throws     Exception  { exception_description }
      */
     public List subList(final int start, final int end) throws Exception {
- 
         if (start < 0 || end < 0 || start >= end
          || start > size || end > size) {
             throw new Exception("Index Out of Bounds Exception");
@@ -218,9 +217,13 @@ class List{
 /**.
  * Class for solution.
  */
-class Solution {
+public class Solution {
+    /**.
+     * { function_description }
+     *
+     * @param      args  The arguments
+     */
     public static void main(final String[] args) {
-        
         List l = new List();
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
 
@@ -234,8 +237,8 @@ class Solution {
                     if (t.length == 1) {
                 l.add(Integer.parseInt(tokens[1]));
                     }
-                    if (t.length == 2){
-                    l.add(Integer.parseInt(t[0]),Integer.parseInt(t[1]));
+                    if (t.length == 2) {
+                    l.add(Integer.parseInt(t[0]), Integer.parseInt(t[1]));
                     }
                 }
                 break;
