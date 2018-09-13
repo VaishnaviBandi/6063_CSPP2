@@ -1,13 +1,15 @@
 import java.util.Scanner;
-import java.util.Arrays;
+/**
+ * { item_description }
+ */
 public final class Solution {
-    /**
+    /**.
      * Constructs the object.
      */
     private Solution() {
 
     }
-    /**
+    /**.
      * main method to drive program.
      *
      * @param      args  The arguments

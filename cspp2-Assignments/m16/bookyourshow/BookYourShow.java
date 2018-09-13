@@ -1,11 +1,11 @@
 // import java.util.*;
 import java.util.Arrays;
 import java.util.Scanner;
-/**
+/**.
  * Class for book your show.
  */
 public class BookYourShow {
-    /**
+    /**.
      * { var_description }
      */
     Show[] showsList;
