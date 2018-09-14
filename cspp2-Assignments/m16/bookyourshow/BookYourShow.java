@@ -27,8 +27,6 @@ public class BookYourShow {
      */
     public void addAShow(Show show) {
         showsList[size++] = show;
-        // for(Show i : showsList)
-        // System.out.println(i);
     }
     /**
      * Gets a show.

@@ -44,11 +44,6 @@ public final class Solution {
 
                 case "get":
                     bys.getAShow(check[1], tokens[1]);
-                    // if (show != null) {
-                    //    System.out.println(show);
-                    // } else {
-                    //     System.out.println("No show");
-                    // }
                 break;
 
                 case "print":
