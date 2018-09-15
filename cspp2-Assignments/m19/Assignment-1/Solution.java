@@ -111,25 +111,25 @@ public final class Solution {
 		// write your code here to display the quiz questions
 		// read the user responses from the console
 		// store the user respones in the quiz object
-		int c = 0;
-		Scanner scan = s;
-		while (c < answerCount) {
-			System.out.println("question text " + (c+ 1) + " (" + quiz.maxMarks[c] + ")");
-			String[] options = quiz.choices[c].split(",");
-			int count1 = 1;
-			for (String option : options) {
-				if (count1 == 4) {
-					System.out.println(option);
-				} else {
-					System.out.print(option + "\t");
-				}
-				count1++;
-			}
-			String answer = scan.nextLine();
-			String[] res = answer.split(" ");
-			quiz.responses[c] = res[1];
-			c += 1;
-		}
+		// int c = 0;
+		// Scanner scan = s;
+		// while (c < answerCount) {
+		// 	System.out.println("question text " + (c+ 1) + " (" + quiz.maxMarks[c] + ")");
+		// 	String[] options = quiz.choices[c].split(",");
+		// 	int count1 = 1;
+		// 	for (String option : options) {
+		// 		if (count1 == 4) {
+		// 			System.out.println(option);
+		// 		} else {
+		// 			System.out.print(option + "\t");
+		// 		}
+		// 		count1++;
+		// 	}
+		// 	String answer = scan.nextLine();
+		// 	String[] res = answer.split(" ");
+		// 	quiz.responses[c] = res[1];
+		// 	c += 1;
+		// }
 	}
 
 	/**
@@ -144,20 +144,22 @@ public final class Solution {
 		// 		System.out.println("Correct Answer! - Marks Awarded:" + );
 		// 	}
 		// }
-		int temp = 0;
-		for (int i = 0; i < (quiz.count); i++) {
-			int ans = 0;
-			int penality = 0;
-			if (quiz.ans[i].equals(quiz.responses[i])) {
-				ans = Integer.parseInt(quiz.maxMarks[i]);
-				System.out.println("Correct Answer! - Marks Awarded: " + quiz.maxMarks[i]);
-			} else {
-				penality = Integer.parseInt(quiz.penality[i]);
-				System.out.println("Wrong Answer! - Penalty: " + quiz.penality[i]);
-			}
-			temp = temp + ans + penality;
-		}
-		System.out.println("Total Score: " + temp);
-	}
+	// 	int temp = 0;
+	// 	for (int i = 0; i < (quiz.count); i++) {
+	// 		int ans = 0;
+	// 		int penality = 0;
+	// 		if (quiz.ans[i].equals(quiz.responses[i])) {
+	// 			ans = Integer.parseInt(quiz.maxMarks[i]);
+	// 			System.out.println("Correct Answer! - Marks Awarded: " + quiz.maxMarks[i]);
+	// 		} else {
+	// 			penality = Integer.parseInt(quiz.penality[i]);
+	// 			System.out.println("Wrong Answer! - Penalty: " + quiz.penality[i]);
+	// 		}
+	// 		temp = temp + ans + penality;
+	// 	}
+	// 	System.out.println("Total Score: " + temp);
+	// }
+	// 
+	// 
 }
-
+}
