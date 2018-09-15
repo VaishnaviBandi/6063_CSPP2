@@ -1,19 +1,19 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 // class Quiz {
-	// String question;
-	// int score;
-	// int maxMarks;
-	// int questionCount;
-	// Quiz() {
+// String question;
+// int score;
+// int maxMarks;
+// int questionCount;
+// Quiz() {
 
-	// }
-	// Quiz(String question, int score, int maxMarks, int questionCount) {
-	// 	this.question = question;
-	// 	this.score = score;
-	// 	this.maxMarks = maxMarks;
-	// 	this.questionCount = questionCount;
-	// }
+// }
+// Quiz(String question, int score, int maxMarks, int questionCount) {
+// 	this.question = question;
+// 	this.score = score;
+// 	this.maxMarks = maxMarks;
+// 	this.questionCount = questionCount;
+// }
 class Quiz {
 	String[] questions = new String[10];
 	String[] choices = new String[10];;
@@ -87,19 +87,19 @@ public final class Solution {
 		// tokenize the question line and create the question object
 		// add the question objects to the quiz class
 		int  count = 0;
-        // Scanner s = new Scanner(System.in);
-        while(count < questionCount) {
-            String input = s.nextLine();
-            String inputs[] = input.split(":");
-            quiz.questions[count] = inputs[0];
-            quiz.choices[count] = inputs[1];
-            quiz.ans[count] = inputs[2];
-            quiz.maxMarks[count] = inputs[3];
-            quiz.penality[count] = inputs[4];
-            count += 1;
-            quiz.count += 1;
-        }
-        System.out.println(questionCount + " are added to the quiz");
+		// Scanner s = new Scanner(System.in);
+		while (count < questionCount) {
+			String input = s.nextLine();
+			String inputs[] = input.split(":");
+			quiz.questions[count] = inputs[0];
+			quiz.choices[count] = inputs[1];
+			quiz.ans[count] = inputs[2];
+			quiz.maxMarks[count] = inputs[3];
+			quiz.penality[count] = inputs[4];
+			count += 1;
+			quiz.count += 1;
+		}
+		System.out.println(questionCount + " are added to the quiz");
 
 	}
 
@@ -114,6 +114,25 @@ public final class Solution {
 		// write your code here to display the quiz questions
 		// read the user responses from the console
 		// store the user respones in the quiz object
+		int c = 0;
+		Scanner scan = s;
+		while (c < answerCount) {
+			System.out.println("question text " + (c+ 1) + " (" + quiz.maxMarks[c] + ")");
+			String[] options = quiz.choices[c].split(",");
+			int count1 = 1;
+			for (String option : options) {
+				if (count1 == 4) {
+					System.out.println(option);
+				} else {
+					System.out.print(option + "\t");
+				}
+				count1++;
+			}
+			String answer = scan.nextLine();
+			String[] res = answer.split(" ");
+			quiz.responses[c] = res[1];
+			c += 1;
+		}
 	}
 
 	/**
@@ -128,6 +147,20 @@ public final class Solution {
 		// 		System.out.println("Correct Answer! - Marks Awarded:" + );
 		// 	}
 		// }
-
+		int temp = 0;
+		for (int i = 0; i < (quiz.count); i++) {
+			int ans = 0;
+			int penality = 0;
+			if (quiz.ans[i].equals(quiz.responses[i])) {
+				ans = Integer.parseInt(quiz.maxMarks[i]);
+				System.out.println("Correct Answer! - Marks Awarded: " + quiz.maxMarks[i]);
+			} else {
+				penality = Integer.parseInt(quiz.penality[i]);
+				System.out.println("Wrong Answer! - Penalty: " + quiz.penality[i]);
+			}
+			temp = temp + ans + penality;
+		}
+		System.out.println("Total Score: " + temp);
 	}
 }
+
