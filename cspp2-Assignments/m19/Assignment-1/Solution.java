@@ -84,20 +84,21 @@ public final class Solution {
         if (questionCount > 0) {
             System.out.println("Error! Malformed question");
         }
-		while (count < questionCount) {
-			String input = s.nextLine();
-			String inputs[] = input.split(":");
-			quiz.questions[count] = inputs[0];
-			quiz.choices[count] = inputs[1];
-			quiz.ans[count] = inputs[2];
-			quiz.maxMarks[count] = inputs[3];
-			quiz.penality[count] = inputs[4];
-			count += 1;
-			quiz.count += 1;
-		}
-		System.out.println(questionCount + " are added to the quiz");
+	// 	while (count < questionCount) {
+	// 		String input = s.nextLine();
+	// 		String inputs[] = input.split(":");
+	// 		quiz.questions[count] = inputs[0];
+	// 		quiz.choices[count] = inputs[1];
+	// 		quiz.ans[count] = inputs[2];
+	// 		quiz.maxMarks[count] = inputs[3];
+	// 		quiz.penality[count] = inputs[4];
+	// 		count += 1;
+	// 		quiz.count += 1;
+	// 	}
+	// 	System.out.println(questionCount + " are added to the quiz");
 
-	}
+	// }
+    }
 
 	/**
 	 * Starts a quiz.
