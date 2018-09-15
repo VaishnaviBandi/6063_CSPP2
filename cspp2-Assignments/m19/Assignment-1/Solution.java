@@ -14,16 +14,6 @@ import java.util.ArrayList;
 // 	this.maxMarks = maxMarks;
 // 	this.questionCount = questionCount;
 // }
-class Quiz {
-	String[] questions = new String[10];
-	String[] choices = new String[10];;
-	String[] ans = new String[10];;
-	String[] maxMarks = new String[10];;
-	String[] penality = new String[10];;
-	String[] responses = new String[10];
-	int count = 0;
-}
-
 /**
  * Solution class for code-eval.
  */
@@ -88,6 +78,12 @@ public final class Solution {
 		// add the question objects to the quiz class
 		int  count = 0;
 		// Scanner s = new Scanner(System.in);
+		if (questionCount == 0) {
+            System.out.println("Quiz does not have questions");
+        }
+        if (questionCount > 0) {
+            System.out.println("Error! Malformed question");
+        }
 		while (count < questionCount) {
 			String input = s.nextLine();
 			String inputs[] = input.split(":");
