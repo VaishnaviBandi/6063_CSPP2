@@ -1,21 +1,29 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-class Quiz {
-	String question;
-	int score;
-	int maxMarks;
-	int questionCount;
-	Quiz() {
-		
-	}
-	Quiz(String question, int score, int maxMarks, int questionCount) {
-		this.question = question;
-		this.score = score;
-		this.maxMarks = maxMarks;
-		this.questionCount = questionCount;
-	}
+// class Quiz {
+	// String question;
+	// int score;
+	// int maxMarks;
+	// int questionCount;
+	// Quiz() {
 
+	// }
+	// Quiz(String question, int score, int maxMarks, int questionCount) {
+	// 	this.question = question;
+	// 	this.score = score;
+	// 	this.maxMarks = maxMarks;
+	// 	this.questionCount = questionCount;
+	// }
+class Quiz {
+	String[] questions = new String[10];
+	String[] choices = new String[10];;
+	String[] ans = new String[10];;
+	String[] maxMarks = new String[10];;
+	String[] penality = new String[10];;
+	String[] responses = new String[10];
+	int count = 0;
 }
+
 /**
  * Solution class for code-eval.
  */
@@ -78,11 +86,20 @@ public final class Solution {
 		// write your code here to read the questions from the console
 		// tokenize the question line and create the question object
 		// add the question objects to the quiz class
-		// Scanner s = new Scanner(System.in);
-		// Quiz quiz = new Quiz();
-		Quiz q1 = new Quiz();
-		// q1.LOAD_QUESTIONS;
-		System.out.println(q1);
+		int  count = 0;
+        // Scanner s = new Scanner(System.in);
+        while(count < questionCount) {
+            String input = s.nextLine();
+            String inputs[] = input.split(":");
+            quiz.questions[count] = inputs[0];
+            quiz.choices[count] = inputs[1];
+            quiz.ans[count] = inputs[2];
+            quiz.maxMarks[count] = inputs[3];
+            quiz.penality[count] = inputs[4];
+            count += 1;
+            quiz.count += 1;
+        }
+        System.out.println(questionCount + " are added to the quiz");
 
 	}
 
@@ -106,5 +123,11 @@ public final class Solution {
 	 */
 	public static void displayScore(final Quiz quiz) {
 		// write your code here to display the score report
+		// for (int i = 0; i < questions; i++) {
+		// 	if (quiz.answer == ) {
+		// 		System.out.println("Correct Answer! - Marks Awarded:" + );
+		// 	}
+		// }
+
 	}
 }
