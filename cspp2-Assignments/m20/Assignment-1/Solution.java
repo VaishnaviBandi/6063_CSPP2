@@ -60,11 +60,10 @@ class Question {
      * @return     { description_of_the_return_value }
      */
     public boolean evaluateResponse(final String choice) {
-        if ( choice.equals(correctAnswer)) {
+        if (choice.equals(correctAnswer)) {
             return true;
-        } else {
-        return false;
         }
+        return false;
     }
     /**
      * Gets the correct answer.
