@@ -308,7 +308,7 @@ public final class Solution {
                 questiontext[i].setResponse(str);
                 System.out.println(questiontext[i].getQuestionText() + "(" + questiontext[i].getMaxMarks() + ")");
                 System.out.println(question.toString(choice));
-                
+                System.out.println();
             }
         }
     }
