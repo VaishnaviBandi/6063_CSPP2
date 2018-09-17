@@ -148,7 +148,7 @@ class Quiz {
 	/**
 	 * { var_description }.
 	 */
-	private int size;
+	int size;
 	/**
 	 * Constructs the object.
 	 */
@@ -301,7 +301,21 @@ public final class Solution {
 		// write your code here to display the quiz questions on the console.
 		// read the user responses from the console using scanner object.
 		// store the user respone in the question object
-
+		if ( quiz.size > 0) {
+        for (int i = 0; i < quiz.size; i++) {
+            System.out.println(quiz.getQuestion(i).getQuestionText() + "(" + quiz.getQuestion(i).getMaxMarks() + ")");
+            String[] options = quiz.getQuestion(i).getChoice();
+            if ( options.length > 2) {
+            System.out.println(options[0] + "\t" + options[1] + "\t" + options[2] + "\t" + options[3] + "\n");
+            } else if (options.length == 2) {
+                System.out.println(options[0] + "\t" + options[1]);
+            }
+        }
+        for (int j = 0; j < q; j ++) {
+            String line = scan.nextLine();
+            quiz.getQuestion(j).setResponse(line);
+        }
+    }
 	}
 	/**
 	 * Displays the score report.
