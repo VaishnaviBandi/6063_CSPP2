@@ -111,8 +111,8 @@ public class TodoistMain {
             //     break;
             // case "get-next-n":
             //     int n = Integer.parseInt(tokens[2]);
-            //     Task[] tasks = todo.getNextTask(tokens[1], n);
-            //     System.out.println(Arrays.deepToString(tasks));
+            //     // Task[] tasks = todo.getNextTask(tokens[1], n);
+            //     // System.out.println(Arrays.deepToString(tasks));
             //     break;
             // case "total-time":
             //     System.out.println(todo.totalTime4Completion());
@@ -144,9 +144,12 @@ public class TodoistMain {
      */
     public void testTask(final String[] tokens) {
         try {
+            // if (createTask(tokens) != null) {
+            // System.out.println("its not null");
             System.out.println(createTask(tokens));
+            // }
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println("ss" + e.getMessage());
         }
     }
 
@@ -166,8 +169,16 @@ public class TodoistMain {
         boolean important = tokens[4].equals("y");
         boolean urgent = tokens[5].equals("y");
         String status = tokens[6];
-        return new Task(
-                   title, assignedTo, timeToComplete, important, urgent, status);
+        try {
+            Task task_item = new Task(
+                title, assignedTo, timeToComplete, important, urgent, status);
+            return task_item;
+        } catch ( Exception e) {
+            // System.out.println(e);
+            throw new Exception("Title not provided");
+
+
+        }
     }
 
     /**
@@ -175,7 +186,7 @@ public class TodoistMain {
      *
      * @param      args  The command line arguments
      */
-    public  void main(final String[] args) {
+    public void main(final String[] args) {
         startTest();
     }
 }
