@@ -70,25 +70,18 @@ class Task {
         this.imp = imp1;
         this.urgent =   urgent1;
         this.status = status1;
-        // System.out.println("prininf todo |"+status+"|");
         try {
             if (title.length() <= 0) {
-                // isExpection = true;
-
                 throw new Exception("Title not provided");
-                // break;
             }
             if (timeTocomplete <= 0) {
-                // isExpection = true;
                 throw new Exception("Invalid timeToComplete " + timeTocomplete);
             }
             if (status.equals("todo") || status.equals("done")) {
-                // isExpection = true;
             } else {
                 throw new Exception("Invalid status " + status);
             }
         } catch (Exception e) {
-            // throw new Exception("Title not provided");
             System.out.println(e.getMessage());
         }
     }
@@ -163,15 +156,8 @@ class Task {
             // System.out.println("set to not urgernt");
             new_urgent = "Not Urgent";
         }
-        // if (!isExpection) {
-        // System.out.println("upper");
         return title + ", " + assignedTo + ", " + timeTocomplete
                + ", " + importance + ", " + new_urgent + ", " + status;
-        // } else {
-        //     // System.out.println("lower");
-        //     return null;
-        // }
-    }
 
 }
 /**
@@ -321,7 +307,7 @@ public class TodoistMain {
     /**
      * Starts a test.
      */
-    public static void startTest() {
+    public void startTest() {
         Todoist todo = new Todoist();
         Scanner s = new Scanner(System.in);
         while (s.hasNext()) {
@@ -359,7 +345,7 @@ public class TodoistMain {
      * @param      todo    The todo
      * @param      tokens  The tokens
      */
-    public static void testAddTask(final Todoist todo, final String[] tokens) {
+    public void testAddTask(final Todoist todo, final String[] tokens) {
         try {
             todo.addTask(createTask(tokens));
         } catch (Exception e) {
@@ -372,7 +358,7 @@ public class TodoistMain {
      *
      * @param      tokens  The tokens
      */
-    public static void testTask(final String[] tokens) {
+    public void testTask(final String[] tokens) {
         try {
             // if (createTask(tokens) != null) {
             // System.out.println("its not null");
@@ -392,7 +378,7 @@ public class TodoistMain {
      *
      * @throws     Exception  if task inputs are invalid
      */
-    public static Task createTask(final String[] tokens) throws Exception {
+    public Task createTask(final String[] tokens) throws Exception {
         final int one = 1, two = 2, three = 3, four = 4, five = 5, six = 6;
         String title = tokens[one];
         String assignedTo = tokens[two];
@@ -418,7 +404,8 @@ public class TodoistMain {
      *
      * @param      args  The command line arguments
      */
-    public static void main(final String[] args) {
+    public void main(final String[] args) {
         startTest();
     }
+}
 }
