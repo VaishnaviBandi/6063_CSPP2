@@ -185,14 +185,14 @@ class Todoist {
      */
     private int size;
     /**
-     * { max_size }.
+     * { maxSize }.
      */
-    final private int max_size = 100;
+    final private int maxSize = 100;
     /**
      * Constructs the object.
      */
     Todoist() {
-        arr = new Task[max_size];
+        arr = new Task[maxSize];
         size = 0;
     }
     /**
@@ -227,18 +227,18 @@ class Todoist {
      * @return     The next task.
      */
     String[] getNextTask(final String name, final int count) {
-        String[] next_task;
-        String new_task = "";
+        String[] taskk;
+        String newTask = "";
         // new_size=0
-        int new_count = 0;
+        int newcount = 0;
         final int hun = 100;
-        next_task = new String[hun];
+        taskk = new String[hun];
         for (int i = 0; i < size; i++ ) {
             if (arr[i].getAssignedTo().equals(name) && (arr[i].getStatus().equals("todo"))  && (arr[i].getImp()) && !(arr[i].getUrgent())) {
-                new_task = "" + arr[i];
-                next_task[new_count] = new_task;
-                new_count++;
-                if (new_count == count) {
+                newTask = "" + arr[i];
+                taskk[newcount] = newTask;
+                newcount++;
+                if (newcount == count) {
                     break;
 
                 }
@@ -246,8 +246,8 @@ class Todoist {
         }
         String[] ans_task;
         ans_task = new String[count];
-        for (int i = 0; i < new_count; i++) {
-            ans_task[i] = next_task[i];
+        for (int i = 0; i < newcount; i++) {
+            ans_task[i] = taskk[i];
         }
         return ans_task;
     }
@@ -259,23 +259,23 @@ class Todoist {
      * @return     The next task.
      */
     String getNextTask(final String name) {
-        String next_task = "";
+        String taskk = "";
         boolean ifcheck = false;
         for (int i = 0; i < size; i++) {
             if (arr[i].getAssignedTo().equals(name)
                     && (arr[i].getStatus().equals("todo"))
                     && (arr[i].getImp())
                     && !(arr[i].getUrgent())) {
-                next_task = "" + arr[i];
+                taskk = "" + arr[i];
                 ifcheck = true;
                 break;
             }
         }
         if (!ifcheck) {
-            next_task = "null";
+            taskk = "null";
 
         }
-        return next_task;
+        return taskk;
     }
     /**
      * Returns a string representation of the object.
@@ -285,7 +285,6 @@ class Todoist {
     public String toString() {
         String ans = "", t;
         for (int i = 0; i < size; i++) {
-            // System.out.println(arr[i]);
             t = "" + arr[i] + "\n";
             ans += t;
         }
@@ -359,10 +358,7 @@ public class TodoistMain {
      */
     public void testTask(final String[] tokens) {
         try {
-            // if (createTask(tokens) != null) {
-            // System.out.println("its not null");
             System.out.println(createTask(tokens));
-            // }
         } catch (Exception e) {
             System.out.println("ss" + e.getMessage());
         }
