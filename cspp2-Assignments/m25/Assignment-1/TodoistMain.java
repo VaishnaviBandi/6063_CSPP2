@@ -1,9 +1,7 @@
 import java.util.Scanner;
 import java.util.Arrays;
+import java.lang.*;
 
-/**
-  * write your code below this comment
-  */
 class Task {
     private String title;
     private String assignedTo;
@@ -13,8 +11,9 @@ class Task {
     private String status;
     String importance;
     String urgent;
-
-
+    boolean isExpection = false;
+    // public void
+    // private String[] my_tokens;
     Task(String title, String assignedTo, int timeTocomplete, boolean important, boolean urgent, String status) {
         this.title = title;
         this.assignedTo = assignedTo;
@@ -22,17 +21,22 @@ class Task {
         this.important = important;
         this.urgency = urgency;
         this.status = status;
+        // System.out.println("prininf todo |"+status+"|");
         try {
             if (title.length() <= 0) {
+                // isExpection = true;
 
                 throw new Exception("Title not provided");
+                // break;
             }
             if (timeTocomplete <= 0) {
+                // isExpection = true;
 
                 throw new Exception("Invalid timeToComplete " + timeTocomplete);
 
             }
             if (status.equals("todo") || status.equals("done")) {
+                // isExpection = true;
             } else {
                 throw new Exception("Invalid status " + status);
             }
@@ -40,8 +44,27 @@ class Task {
             System.out.println(e);
         }
     }
+    int gettimeTocomplete(){
+        return timeTocomplete;
+    }
+    String getTaskTitle() {
+        return title;
+    }
 
+    String getAssignedTo() {
+        return assignedTo;
+    }
 
+    boolean getUrgent() {
+        return urgency;
+    }
+    boolean getImp() {
+        return important;
+    }
+
+    String getStatus() {
+        return status;
+    }
     public String toString() {
         if (important) {
             importance = "Important";
@@ -53,36 +76,70 @@ class Task {
         } else {
             urgent = "Not Urgent";
         }
-        return title + ", " + assignedTo + ", " + timeTocomplete + ", " + importance + ", " + urgent + ", " + status;
+        return title + ", " + assignedTo + ", " + timeTocomplete + ", " + important + ", " + urgent + ", " + status;
     }
+}
+/**
+  * write your code below this comment
+  */
+
 
 class Todoist {
-    Task[] arr;
+    Task[] task_arr;
     int size;
+    int max_size = 100;
     Todoist() {
-        Task[] arr = new Task[20];
+        task_arr = new Task[max_size];
         size = 0;
     }
-    public void addTask(Task task) {
-        if (size < arr.length) {
-            arr[size++] = task;
-        } else {
-            resize(task);
+    public void addTask(Task item) {
+        task_arr[size] = item;
+        size++;
+    }
+    int totalTime4Completion() {
+        int count = 0;
+        for (int i = 0; i < size; i++ ) {
+            if (task_arr[i].getStatus().equals("todo")) {
+                count += task_arr[i].gettimeTocomplete();
+            }
         }
+        return count;
     }
-    public void resize(Task task) {
-        arr = Arrays.copyOf(arr, 2 * size);
-        arr[size++] = task;
+    String[] getNextTask(String task, int a) {
+        String next_task[];
+        next_task = new String[10];
+        return next_task;
     }
-    public String toString(){
-        for(int i = 0; i < size; i++) {
-			String todo = arr[i].toString();
-			System.out.println(todo);
-		}
-		return "";
-	}
+    String getNextTask(String name) {
+        String next_task = "";
+        boolean ifcheck = false;
+        for (int i = 0; i < size; i++ ) {
+            if (task_arr[i].getAssignedTo().equals(name) && (task_arr[i].getStatus().equals("todo"))  && (task_arr[i].getImp()) && !(task_arr[i].getUrgent())) {
+                next_task = "" + task_arr[i];
+                ifcheck = true;
+                break;
+            }
+        }
+        if (!ifcheck) {
+            next_task = "null";
+
+        }
+        return next_task;
+    }
+    public String toString() {
+        String ans = "", t;
+        for (int i = 0; i < size ; i++ ) {
+            t = "" + task_arr[i] + "\n";
+            ans += t;
+    }
+    return ans;
+}
+class TitleException extends Exception {
+    public String toString() {
+        return "Title not provided";
     }
 
+}
 /**
  * Class for todoist main.
  */
@@ -106,17 +163,17 @@ public class TodoistMain {
             case "print-todoist":
                 System.out.println(todo);
                 break;
-            // case "get-next":
-            //     System.out.println(todo.getNextTask(tokens[1]));
-            //     break;
-            // case "get-next-n":
-            //     int n = Integer.parseInt(tokens[2]);
-            //     // Task[] tasks = todo.getNextTask(tokens[1], n);
-            //     // System.out.println(Arrays.deepToString(tasks));
-            //     break;
-            // case "total-time":
-            //     System.out.println(todo.totalTime4Completion());
-            //     break;
+            case "get-next":
+                System.out.println(todo.getNextTask(tokens[1]));
+                break;
+            case "get-next-n":
+                int n = Integer.parseInt(tokens[2]);
+                // Task[] tasks = todo.getNextTask(tokens[1], n);
+                // System.out.println(Arrays.deepToString(tasks));
+                break;
+            case "total-time":
+                System.out.println(todo.totalTime4Completion());
+                break;
             default:
                 break;
             }
@@ -179,6 +236,9 @@ public class TodoistMain {
 
 
         }
+
+        // System.out.println("important" + important + "\nurgent" + urgent );
+        // return task_item;
     }
 
     /**
