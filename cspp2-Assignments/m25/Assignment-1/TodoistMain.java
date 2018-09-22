@@ -1,26 +1,75 @@
 import java.util.Scanner;
 import java.util.Arrays;
-import java.lang.*;
+// import java.lang.*;
 
+/**
+  * write your code below this comment
+  */
+/**
+ * Class for task.
+ */
 class Task {
+    /**
+     * { String title }.
+     */
     private String title;
+    /**
+     * { String assignedTo }.
+     */
     private String assignedTo;
+    /**
+     * { int timeTocomplete }.
+     */
     private int timeTocomplete;
-    private boolean important;
-    private boolean urgency;
+    /**
+     * { boolean imp }.
+     */
+    private boolean imp;
+    /**
+     * { boolean urgent }.
+     */
+    private boolean urgent;
+    /**
+     * { String status }.
+     */
     private String status;
-    String importance;
-    String urgent;
-    boolean isExpection = false;
+    /**
+     * { String importance }.
+     */
+    private String importance;
+    /**
+     * { String new_urgent }.
+     */
+    private String new_urgent;
+    /**
+     * { var_description }.
+     */
+    private boolean isExpection = false;
     // public void
     // private String[] my_tokens;
-    Task(String title, String assignedTo, int timeTocomplete, boolean important, boolean urgent, String status) {
-        this.title = title;
-        this.assignedTo = assignedTo;
-        this.timeTocomplete = timeTocomplete;
-        this.important = important;
-        this.urgency = urgency;
-        this.status = status;
+
+/**
+ * Constructs the object.
+ *
+ * @param      title1           The title 1
+ * @param      assignedTo1      The assigned to 1
+ * @param      timeTocomplete1  The time tocomplete 1
+ * @param      imp1             The imp 1
+ * @param      urgent1          The urgent 1
+ * @param      status1          The status 1
+ *
+ * @throws TitleException
+ */
+    Task(final String title1, final String assignedTo1,
+         final int timeTocomplete1, final boolean imp1,
+         final boolean urgent1,
+         final String status1) throws TitleException {
+        this.title = title1;
+        this.assignedTo = assignedTo1;
+        this.timeTocomplete = timeTocomplete1;
+        this.imp = imp1;
+        this.urgent =   urgent1;
+        this.status = status1;
         // System.out.println("prininf todo |"+status+"|");
         try {
             if (title.length() <= 0) {
@@ -31,9 +80,7 @@ class Task {
             }
             if (timeTocomplete <= 0) {
                 // isExpection = true;
-
                 throw new Exception("Invalid timeToComplete " + timeTocomplete);
-
             }
             if (status.equals("todo") || status.equals("done")) {
                 // isExpection = true;
@@ -41,81 +88,200 @@ class Task {
                 throw new Exception("Invalid status " + status);
             }
         } catch (Exception e) {
-            System.out.println(e);
+            // throw new Exception("Title not provided");
+            System.out.println(e.getMessage());
         }
     }
-    int gettimeTocomplete(){
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }
+     */
+    int gettimeTocomplete() {
         return timeTocomplete;
     }
+    /**
+     * Gets the task title.
+     *
+     * @return     The task title.
+     */
     String getTaskTitle() {
         return title;
     }
-
+    /**
+     * Gets the assigned to.
+     *
+     * @return     The assigned to.
+     */
     String getAssignedTo() {
         return assignedTo;
     }
 
+    /**
+     * Gets the urgent.
+     *
+     * @return     The urgent.
+     */
     boolean getUrgent() {
-        return urgency;
-    }
-    boolean getImp() {
-        return important;
+        return urgent;
     }
 
+    /**
+     * Gets the imp.
+     *
+     * @return     The imp.
+     */
+    boolean getImp() {
+        return imp;
+    }
+    /**
+     *
+     * Gets the status.
+     *
+     * @return     The status.
+     */
     String getStatus() {
         return status;
     }
+
+    /**
+     *
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
-        if (important) {
+        if (imp) {
             importance = "Important";
         } else {
             importance = "Not Important";
         }
-        if (urgency) {
-            urgent = "Urgent";
+        if (urgent) {
+            // System.out.println("set to urgernt");
+            new_urgent = "Urgent";
         } else {
-            urgent = "Not Urgent";
+            // System.out.println("set to not urgernt");
+            new_urgent = "Not Urgent";
         }
-        return title + ", " + assignedTo + ", " + timeTocomplete + ", " + important + ", " + urgent + ", " + status;
+        // if (!isExpection) {
+        // System.out.println("upper");
+        return title + ", " + assignedTo + ", " + timeTocomplete
+               + ", " + importance + ", " + new_urgent + ", " + status;
+        // } else {
+        //     // System.out.println("lower");
+        //     return null;
+        // }
     }
+
 }
 /**
-  * write your code below this comment
-  */
+ * Exception for signaling title errors.
+ */
+class TitleException extends Exception {
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
+    public String toString() {
+        return "Title not provided";
+    }
 
+}
 
 class Todoist {
-    Task[] task_arr;
-    int size;
-    int max_size = 100;
+    /**
+     * { todo_arr }.
+     */
+    private Task[] todo_arr;
+    /**
+     * { size }.
+     */
+    private int size;
+    /**
+     * { max_size }.
+     */
+    final private int max_size = 100;
+    /**
+     * Constructs the object.
+     */
     Todoist() {
-        task_arr = new Task[max_size];
+        todo_arr = new Task[max_size];
         size = 0;
     }
+    /**
+     * Adds a task.
+     *
+     * @param      item  The item
+     */
     public void addTask(Task item) {
-        task_arr[size] = item;
+        todo_arr[size] = item;
         size++;
     }
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }
+     */
     int totalTime4Completion() {
-        int count = 0;
+        int tot = 0;
         for (int i = 0; i < size; i++ ) {
-            if (task_arr[i].getStatus().equals("todo")) {
-                count += task_arr[i].gettimeTocomplete();
+            if (todo_arr[i].getStatus().equals("todo")) {
+                tot += todo_arr[i].gettimeTocomplete();
             }
         }
-        return count;
+        return tot;
     }
-    String[] getNextTask(String task, int a) {
-        String next_task[];
-        next_task = new String[10];
-        return next_task;
+    /**
+     * Gets the next task.
+     *
+     * @param      name   The name
+     * @param      count  The count
+     *
+     * @return     The next task.
+     */
+    String[] getNextTask(final String name, final int count) {
+        String[] next_task;
+        String new_task = "";
+        // new_size=0
+        int new_count = 0;
+        final int hun = 100;
+        next_task = new String[hun];
+        for (int i = 0; i < size; i++ ) {
+            if (todo_arr[i].getAssignedTo().equals(name) && (todo_arr[i].getStatus().equals("todo"))  && (todo_arr[i].getImp()) && !(todo_arr[i].getUrgent())) {
+                new_task = "" + todo_arr[i];
+                next_task[new_count] = new_task;
+                new_count++;
+                if (new_count == count) {
+                    // ifcheck = true;
+                    break;
+
+                }
+            }
+        }
+        String[] ans_task;
+        ans_task = new String[count];
+        for (int i = 0; i < new_count; i++) {
+            ans_task[i] = next_task[i];
+        }
+        return ans_task;
     }
-    String getNextTask(String name) {
+    /**
+     * Gets the next task.
+     *
+     * @param      name  The name
+     *
+     * @return     The next task.
+     */
+    String getNextTask(final String name) {
         String next_task = "";
         boolean ifcheck = false;
-        for (int i = 0; i < size; i++ ) {
-            if (task_arr[i].getAssignedTo().equals(name) && (task_arr[i].getStatus().equals("todo"))  && (task_arr[i].getImp()) && !(task_arr[i].getUrgent())) {
-                next_task = "" + task_arr[i];
+        for (int i = 0; i < size; i++) {
+            if (todo_arr[i].getAssignedTo().equals(name)
+                    && (todo_arr[i].getStatus().equals("todo"))
+                    && (todo_arr[i].getImp())
+                    && !(todo_arr[i].getUrgent())) {
+                next_task = "" + todo_arr[i];
                 ifcheck = true;
                 break;
             }
@@ -126,29 +292,36 @@ class Todoist {
         }
         return next_task;
     }
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         String ans = "", t;
-        for (int i = 0; i < size ; i++ ) {
-            t = "" + task_arr[i] + "\n";
+        for (int i = 0; i < size; i++) {
+            // System.out.println(todo_arr[i]);
+            t = "" + todo_arr[i] + "\n";
             ans += t;
-    }
-    return ans;
-}
-class TitleException extends Exception {
-    public String toString() {
-        return "Title not provided";
-    }
+        }
 
+        return ans;
+    }
 }
 /**
  * Class for todoist main.
  */
 public class TodoistMain {
+    /**
+     * Constructs the object.
+     */
+    TodoistMain() {
 
+    }
     /**
      * Starts a test.
      */
-    public void startTest() {
+    public static void startTest() {
         Todoist todo = new Todoist();
         Scanner s = new Scanner(System.in);
         while (s.hasNext()) {
@@ -168,8 +341,8 @@ public class TodoistMain {
                 break;
             case "get-next-n":
                 int n = Integer.parseInt(tokens[2]);
-                // Task[] tasks = todo.getNextTask(tokens[1], n);
-                // System.out.println(Arrays.deepToString(tasks));
+                String[] tasks = todo.getNextTask(tokens[1], n);
+                System.out.println(Arrays.deepToString(tasks));
                 break;
             case "total-time":
                 System.out.println(todo.totalTime4Completion());
@@ -186,7 +359,7 @@ public class TodoistMain {
      * @param      todo    The todo
      * @param      tokens  The tokens
      */
-    public void testAddTask(final Todoist todo, final String[] tokens) {
+    public static void testAddTask(final Todoist todo, final String[] tokens) {
         try {
             todo.addTask(createTask(tokens));
         } catch (Exception e) {
@@ -199,7 +372,7 @@ public class TodoistMain {
      *
      * @param      tokens  The tokens
      */
-    public void testTask(final String[] tokens) {
+    public static void testTask(final String[] tokens) {
         try {
             // if (createTask(tokens) != null) {
             // System.out.println("its not null");
@@ -219,22 +392,21 @@ public class TodoistMain {
      *
      * @throws     Exception  if task inputs are invalid
      */
-    public Task createTask(final String[] tokens) throws Exception {
-        String title = tokens[1];
-        String assignedTo = tokens[2];
-        int timeToComplete = Integer.parseInt(tokens[3]);
-        boolean important = tokens[4].equals("y");
-        boolean urgent = tokens[5].equals("y");
-        String status = tokens[6];
+    public static Task createTask(final String[] tokens) throws Exception {
+        final int one = 1, two = 2, three = 3, four = 4, five = 5, six = 6;
+        String title = tokens[one];
+        String assignedTo = tokens[two];
+        int timeToComplete = Integer.parseInt(tokens[three]);
+        boolean important = tokens[four].equals("y");
+        boolean urgent = tokens[five].equals("y");
+        String status = tokens[six];
         try {
             Task task_item = new Task(
                 title, assignedTo, timeToComplete, important, urgent, status);
             return task_item;
-        } catch ( Exception e) {
+        } catch (Exception e) {
             // System.out.println(e);
             throw new Exception("Title not provided");
-
-
         }
 
         // System.out.println("important" + important + "\nurgent" + urgent );
@@ -246,8 +418,7 @@ public class TodoistMain {
      *
      * @param      args  The command line arguments
      */
-    public void main(final String[] args) {
+    public static void main(final String[] args) {
         startTest();
     }
-}
 }
