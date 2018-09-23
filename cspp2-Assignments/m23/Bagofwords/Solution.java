@@ -106,7 +106,8 @@ new FileReader("H:\\CSPP2\\6063_CSPP2\\cspp2-Assignments\\m24\\Bagofwords\\"
             return;
         }
         String folder = s.nextLine();
-File file = new File("H:\\CSPP2\\6063_CSPP2\\cspp2-Assignments\\m24\\Bagofwords\\" + folder);
+File file = 
+new File("H:\\CSPP2\\6063_CSPP2\\cspp2-Assignments\\m24\\Bagofwords\\" + folder);
         String[] str = file.list();
         for (String files : str) {
             String content = fileRead(folder, files);
